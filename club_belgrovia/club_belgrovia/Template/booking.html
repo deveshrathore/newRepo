@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block Destination %}
+<div>
+    <img src="https://www.itchotels.com/content/dam/itchotels/in/umbrella/welcomHotel/hotel-listing/hotel-listing-card/welcomhotel-tavleen-chail.png" width="434px" alt="">
+</div>
+<div class="m-0 ">
+    <a href="" class="dropdown-item  fw-bold text-decoration-underline">India</a>
+    {% for city in local %}
+        <a href="{% url 'dcity' city_id=city.id %}" class="dropdown-item">{{city.name}}</a>
+    {% endfor %}
+    
+</div>
+<div class="m-0">
+    <a href="#" class="dropdown-item fw-bold text-decoration-underline">International</a>
+    {% for country in foreign %}
+        <a href="{% url 'dcountry' country_id=country.id %}" class="dropdown-item">{{country.name}}</a>
+    {% endfor %}
+</div>
+{% endblock %}
+{% block mainbody %}
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 p-0" style="background-image: url('{% static 'img/carousel-bg-1.jpg' %}');">
+        <div class="container-fluid page-header-inner py-5">
+            <div class="container text-center">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Booking</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center text-uppercase">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Booking</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Service Start -->
+        <div style="width: 90%;" class="mx-auto">
+            <div class="row justify-content-center">
+                    <div class="col-md-4 col-lg-2  p-4 m-2 bg-dark" style="border-radius: 5px;">
+                        <div class="">
+                                <h2 class="text-success text-center">Gold</h2>
+                                <p class="ms-4 text-light"><span class="v4-pril-curr"><i class="fa fa-inr  text-success">Rs</i></span> <b>3,00,000</b> <span class="v4">/ 1 Years</span></p>
+                            <div class="">
+                                <ul style="list-style-type: none;height: 255px;" class="mt-3">
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> 6N/7D Yearly</li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> India + Asia </li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> Only Accommodation</li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> AMC &amp; 6999</li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> 4 <sup>*</sup> & 5 <sup>*</sup> Property</li>
+                                </ul>
+                                <a class="btn btn-danger w-100" href="{% url 'contact' %}">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-2  p-4 m-2 bg-dark pt-2" style="border-radius: 5px;">
+                        <div class="v4-pril-inn">
+                            <div class="v4-pril-inn-top">
+                                <h2 class="text-success text-center mt-3">Platinum</h2>
+                                <p class="ms-4 text-light"><span class="v4-pril-curr"><i class="fa fa-inr  text-success">Rs</i></span> <b>4,20,000</b> <span class="v4-pril-mon">/ 1 Years</span></p>
+                            </div>
+                            <div class="v4-pril-inn-bot">
+                                <ul style="list-style-type: none;height: 255px;" class="mt-3">
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> 6N/7D Yearly</li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> India + Asia + Europe</li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> Only Accommodation</li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> AMC &amp; 8999</li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> 4 <sup>*</sup> & 5 <sup>*</sup> Property</li>
+                                </ul>
+                                <a class="btn btn-danger w-100" href="{% url 'contact' %}">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-2  p-4 m-2 bg-dark pt-2 " style="border-radius: 5px;">
+                        <div class="v4-pril-inn">
+                            <div class="v4-pril-inn-top">
+                                <h2 class="text-success text-center mt-3">Gold</h2>
+                                <p class="ms-4 text-light"><span class="v4-pril-curr"><i class="fa fa-inr  text-success">Rs</i></span> <b>7,50,000</b> <span class="v4-pril-mon">/ 3 Years</span></p>
+                            </div>
+                            <div class="v4-pril-inn-bot">
+                                <ul style="list-style-type: none;height: 255px;" class="mt-3">
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> 6N/7D Yearly</li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> India + Asia </li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> Only Accommodation</li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> AMC &amp; 6999</li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> 4 <sup>*</sup> & 5 <sup>*</sup> Property</li>
+
+                                </ul>
+                                <a class="btn btn-danger w-100" href="{% url 'contact' %}">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-2  p-4  m-2 bg-dark pt-2" style="border-radius: 5px;">
+                        <div class="v4-pril-inn">
+                            <div class="v4-pril-inn-top">
+                                <h2 class="text-success text-center mt-3">Platinum</h2>
+                                <p class="ms-4 text-light"><span class="v4-pril-curr"><i class="fa fa-inr  text-success">Rs</i></span> <b>9,50,000</b> <span class="v4-pril-mon">/ 3 Years</span></p>
+                            </div>
+                            <div class="v4-pril-inn-bot">
+                                <ul style="list-style-type: none;height: 255px;" class="mt-3">
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> 6N/7D Yearly</li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> India + Asia + Europe</li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> Only Accommodation</li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> AMC &amp; 8999</li>
+                                    <li class="text-light py-2"><i class="fa fa-check text-success"></i> 4 <sup>*</sup> & 5 <sup>*</sup> Property</li>
+                                </ul>
+                                <a class="btn btn-danger w-100" href="{% url 'contact' %}">Get Started</a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    <!-- Service End -->
+
+
+    <!-- Booking Start -->
+    <div class="container-fluid bg-secondary booking my-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-6 py-5">
+                    <div class="py-5">
+                        <h1 class="text-white mb-4">Certified and Award Winning Services</h1>
+                        <p class="text-white mb-0">Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus sed.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-primary h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s">
+                        <h1 class="text-white mb-4">Book For A Experience</h1>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <select class="form-select border-0" style="height: 55px;">
+                                        <option selected>Select A Experience</option>
+                                        <option value="1">Service 1</option>
+                                        <option value="2">Service 2</option>
+                                        <option value="3">Service 3</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="date" id="date1" data-target-input="nearest">
+                                        <input type="text"
+                                            class="form-control border-0 datetimepicker-input"
+                                            placeholder="Mobile Number" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="Special Request"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-secondary w-100 py-3" type="submit">Book Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Booking End -->
+
+
+    <!-- Call To Action Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-8 col-md-6">
+                    <h6 class="text-primary text-uppercase">// Call To Action //</h6>
+                    <h1 class="mb-4">Have Any Pre Booking Question?</h1>
+                    <p class="mb-0">Lorem diam ea sit dolor labore. Clita et dolor erat sed est lorem sed et sit. Diam sed duo magna erat et stet clita ea magna ea sed, sit labore magna lorem tempor justo rebum dolores. Eos dolor sea erat amet et, lorem labore lorem at dolores. Stet ea ut justo et, clita et et ipsum diam.</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="bg-primary d-flex flex-column justify-content-center text-center h-100 p-4">
+                        <h3 class="text-white mb-4"><i class="fa fa-phone-alt me-3"></i>+012 345 6789</h3>
+                        <a href="" class="btn btn-secondary py-3 px-5">Contact Us<i class="fa fa-arrow-right ms-3"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Call To Action End -->
+
+{% endblock %}

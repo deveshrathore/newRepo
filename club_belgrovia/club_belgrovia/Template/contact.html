@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block Destination %}
+<div>
+    <img src="https://www.itchotels.com/content/dam/itchotels/in/umbrella/welcomHotel/hotel-listing/hotel-listing-card/welcomhotel-tavleen-chail.png" width="434px" alt="">
+</div>
+<div class="m-0 ">
+    <a href="" class="dropdown-item  fw-bold text-decoration-underline">India</a>
+    {% for city in local %}
+        <a href="{% url 'dcity' city_id=city.id %}" class="dropdown-item">{{city.name}}</a>
+    {% endfor %}
+    
+</div>
+<div class="m-0">
+    <a href="#" class="dropdown-item fw-bold text-decoration-underline">International</a>
+    {% for country in foreign %}
+        <a href="{% url 'dcountry' country_id=country.id %}" class="dropdown-item">{{country.name}}</a>
+    {% endfor %}
+</div>
+{% endblock %}
+{% block mainbody %}
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 p-0" style="background-image: url('{% static 'img/carousel-bg-1.jpg' %}');">
+        <div class="container-fluid page-header-inner py-5">
+            <div class="container text-center">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Contact</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center text-uppercase">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase">// Contact Us //</h6>
+                <h1 class="mb-5">Contact For Any Query</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="row gy-4">
+                        <div class="col-md-4">
+                            <div class="bg-light d-flex flex-column justify-content-center p-4">
+                                <h5 class="text-uppercase">// Booking //</h5>
+                                <p class="m-0"><i class="fa fa-envelope-open text-primary me-2"></i>book@example.com</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light d-flex flex-column justify-content-center p-4">
+                                <h5 class="text-uppercase">// General //</h5>
+                                <p class="m-0"><i class="fa fa-envelope-open text-primary me-2"></i>info@example.com</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light d-flex flex-column justify-content-center p-4">
+                                <h5 class="text-uppercase">// Technical //</h5>
+                                <p class="m-0"><i class="fa fa-envelope-open text-primary me-2"></i>tech@example.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                    <iframe class="position-relative rounded w-100 h-100"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.434800038864!2d75.76942691504576!3d26.95312698311017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3939b07eb87%3A0x3c20fcb84c42dfe4!2sTopMed%20ENT%20and%20Ortho%20Centre%2C%20Sikar%20Road%2C%20Jaipur!5e0!3m2!1sen!2sin!4v1685535740045!5m2!1sen!2sin"
+                        frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
+                        
+                </div>
+                <div class="col-md-6">
+                    <div class="wow fadeInUp" data-wow-delay="0.2s">
+                        <p class="mb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi earum magnam quaerat commodi alias debitis nemo placeat consectetur! Sapiente adipisci ullam, quia consectetur nobis voluptatibus nihil possimus enim harum veritatis!</p>
+                        <form method='post'>
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="number" placeholder="number" name="number">
+                                        <label for="number">number</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a message here" name='message' id="message" style="height: 100px"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+{% endblock %}

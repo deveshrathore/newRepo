@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block Destination %}
+<div>
+    <img src="https://www.itchotels.com/content/dam/itchotels/in/umbrella/welcomHotel/hotel-listing/hotel-listing-card/welcomhotel-tavleen-chail.png" width="434px" alt="">
+</div>
+<div class="m-0 ">
+    <a href="" class="dropdown-item  fw-bold text-decoration-underline">India</a>
+    {% for city in local %}
+        <a href="{% url 'dcity' city_id=city.id %}" class="dropdown-item">{{city.name}}</a>
+    {% endfor %}
+    
+</div>
+<div class="m-0">
+    <a href="#" class="dropdown-item fw-bold text-decoration-underline">International</a>
+    {% for country in foreign %}
+        <a href="{% url 'dcountry' country_id=country.id %}" class="dropdown-item">{{country.name}}</a>
+    {% endfor %}
+</div>
+{% endblock %}
+{% block mainbody %}
+
+
+    <!-- Cards Start -->
+    <div class="text-center mt-5 pt-3">
+        <h1>Our Partners</h1>
+    </div>
+    <div class="row  justify-content-center w-75 mx-auto pt-3">
+        {% for hotel in brand %}
+        <div class="col-lg-4 p-0">
+            <div> 
+                <a href = "#" class="column mx-2 " id = "grayscale">
+                    <img src = "{{hotel.image.url}}" width="260px">
+                    <p class="ms-2">{{hotel.name}}</p>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- Cards End -->
+
+    {% endblock %}

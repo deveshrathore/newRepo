@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block Destination %}
+<div>
+    <img src="https://www.itchotels.com/content/dam/itchotels/in/umbrella/welcomHotel/hotel-listing/hotel-listing-card/welcomhotel-tavleen-chail.png" width="434px" alt="">
+</div>
+<div class="m-0 ">
+    <a href="" class="dropdown-item fw-bold text-decoration-underline">India</a>
+    {% for city in local %}
+        <a href="{% url 'dcity' city_id=city.id %}" class="dropdown-item">{{city.name}}</a>
+    {% endfor %}
+</div>
+<div class="m-0">
+    <a href="#" class="dropdown-item fw-bold text-decoration-underline">International</a>
+    {% for country in foreign %}
+        <a href="{% url 'dcountry' country_id=country.id %}" class="dropdown-item">{{country.name}}</a>
+    {% endfor %}
+</div>
+{% endblock %}
+{% block mainbody %}
+<div class="text-center mt-5 pt-3">
+    <h1>Hotels In {{place}}</h1>
+</div>
+<div class="cards-list row justify-content-center w-100 pt-3">
+    {% for hotel in hotels %}
+    <div class="card col-lg-3 col-md-6 p-0 mx-3">
+        <div class="card_image  "> 
+         <img src="{{ hotel.image.url }}"/> 
+        </div>
+        <div class="card_title title-white">
+          <p class="text-danger">{{ hotel.name }}
+            {% if hotel.star > 0 %}
+            <div class="fa fa-star" style="color: #FFD700;"></div>
+            {% endif %}
+            {% if hotel.star > 1 %}
+            <div class="fa fa-star" style="color: #FFD700;"></div>
+            {% endif %}
+            {% if hotel.star > 2 %}
+            <div class="fa fa-star" style="color: #FFD700;"></div>
+            {% endif %}
+            {% if hotel.star > 3 %}
+            <div class="fa fa-star" style="color: #FFD700;"></div>
+            {% endif %}
+            {% if hotel.star > 4 %}
+            <div class="fa fa-star" style="color: #FFD700;"></div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<!-- Cards End -->
+{% endblock %}
